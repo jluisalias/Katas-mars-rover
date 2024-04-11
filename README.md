@@ -15,3 +15,9 @@ The exercise consists on developing an API to control a Rover vehicle to be movi
 6. The rover receives a char array of commands e.g. RMMLM and returns the finishing point after the moves e.g. 2:1:N
 7. The rover wraps around if it reaches the end of the grid.
 8. The grid may have obstacles. If a given sequence of commands encounters an obstacle, the rover will backtrack to the last coordinate from which it attempted to access the obstacle and report the obstacle adding a 0 at the beginning of the returned string e.g. O:2:2:N
+
+## Final Notes to improve
+After doing the exercise there are a couple of things that I think that could improve the readability of the code applying some code patterns, I decide not to implement those because this is a basic example and it would make the code more complex without necessity, but in real life, they may be useful:
+
+1. In the Rover Class, all the functionality included in the for each loop, with nested if..elses, I think that maybe using a combination of Command/Strategy patterns, I could extract the different behaviours to tiny classes with just two methods: one executor to execute its command, and one decision evaluator to check if the command applies to that particular class.
+2. I would apply the same combination in the Grid class, where the next coordinate is calculated.
